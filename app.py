@@ -64,7 +64,7 @@ with st.container():
 
     with col_graf3:
         st.markdown("Casos Respiratórios por Idade")
-        respiratorios_df = df[df["SindRespiratorio"] == 1]
+        respiratorios_df = df[df["SindRespiratoria"] == 1]
         fig3, ax3 = plt.subplots(figsize=(3.5, 2.5))
         sns.histplot(respiratorios_df["Idade"], bins=10, kde=True, color="purple", ax=ax3)
         ax3.set_xlabel("Idade")
@@ -125,7 +125,7 @@ st.divider()
 
 # POISSON - probabilidade de casos respiratórios
 st.markdown("### Casos Respiratórios por Turno (Distribuição de Poisson)")
-casos_por_turno = df.groupby("Turno")["SindRespiratorio"].sum().mean()
+casos_por_turno = df.groupby("Turno")["SindRespiratoria"].sum().mean()
 
 k_poisson = st.slider("Número de casos respiratórios desejados (ou mais)", 
                       min_value=0, max_value=10, value=3, step=1)
