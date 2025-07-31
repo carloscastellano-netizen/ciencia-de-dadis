@@ -24,7 +24,7 @@ st.title("Painel de Atendimento Médico")
 # Cards de métricas 
 media_idade = df["Idade"].mean()
 total_atestados = df[df["Atestado"] == 1].shape[0]
-total_respiratorio = df[df["SindRespiratorio"] == 1].shape[0]
+total_respiratorio = df[df["SindRespiratoria"] == 1].shape[0]
 
 st.markdown("### Resumo dos Atendimentos")
 col1, col2, col3 = st.columns(3)
